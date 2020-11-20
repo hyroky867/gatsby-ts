@@ -1,1 +1,3 @@
-next.config.js
+config/
+types/graphql-types.d.ts
+gatsby-config.js

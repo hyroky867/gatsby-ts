@@ -4,5 +4,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.alwaysShowStatus": true
+  "eslint.alwaysShowStatus": true,
+  "files.exclude": {
+    "**/.history": true
+  }
 }
