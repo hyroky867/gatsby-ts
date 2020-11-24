@@ -45,7 +45,6 @@ type JsonLDType = {
   };
 };
 
-// const Component: React.FC<Props> = ({ title, desc, banner, pathname, article }: Props) => (
 const Component: React.FC<Props> = ({ title, desc, banner, pathname, article }: Props) => {
   const data: SeoQuery = useStaticQuery(graphql`
     query SEO {

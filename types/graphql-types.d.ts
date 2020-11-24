@@ -1433,6 +1433,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___cache_busting_mode'
   | 'pluginCreator___pluginOptions___crossOrigin'
   | 'pluginCreator___pluginOptions___include_favicon'
+  | 'pluginCreator___pluginOptions___cacheDigest'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
@@ -1640,6 +1641,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___cache_busting_mode'
   | 'pluginOptions___crossOrigin'
   | 'pluginOptions___include_favicon'
+  | 'pluginOptions___cacheDigest'
   | 'pluginOptions___path'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
@@ -1776,6 +1778,7 @@ export type SitePluginPluginOptions = {
   cache_busting_mode?: Maybe<Scalars['String']>;
   crossOrigin?: Maybe<Scalars['String']>;
   include_favicon?: Maybe<Scalars['Boolean']>;
+  cacheDigest?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
@@ -1800,6 +1803,7 @@ export type SitePluginPluginOptionsFilterInput = {
   cache_busting_mode?: Maybe<StringQueryOperatorInput>;
   crossOrigin?: Maybe<StringQueryOperatorInput>;
   include_favicon?: Maybe<BooleanQueryOperatorInput>;
+  cacheDigest?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
