@@ -1,6 +1,10 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const config = require('./config/site');
 
-console.log(config);
+const url = `https://${process.env.DOMAIN}`
 
 module.exports = {
   siteMetadata: {
@@ -29,5 +33,18 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: url,
+        sitemap: `${url}/sitemap.xml`,
+        policy: [
+          {
+            userAgent: '*',
+            allow: '/',
+          }
+        ]
+      }
+    },
   ]
 }
