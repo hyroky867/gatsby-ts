@@ -8,4 +8,4 @@ public/
 yarn-error.log
 .history
 .env
-.env.local
+.env.development
