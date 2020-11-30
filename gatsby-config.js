@@ -1,10 +1,10 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 const config = require('./config/site');
 
-const url = `https://${process.env.DOMAIN}`
+const url = `https://${process.env.DOMAIN}`;
 
 module.exports = {
   siteMetadata: {
@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {
-        fileName: `types/graphql-types.d.ts`
+        fileName: 'types/graphql-types.d.ts',
       }
     },
     'gatsby-plugin-sitemap',
@@ -45,6 +45,16 @@ module.exports = {
           }
         ]
       }
+    },
+    {
+      resolve: 'gatsby-source-microcms',
+      options: {
+        apiKey: `${process.env.MICROCMS_API_KEY}`,
+        serviceId: process.env.MICROCMS_SERVICE_ID,
+        apis: [{
+          endpoint: process.env.MICROCMS_ENDPOINT,
+        }],
+      },
     },
   ]
 }

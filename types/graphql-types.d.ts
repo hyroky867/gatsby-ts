@@ -1,5 +1,7 @@
 export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -678,6 +680,191 @@ export type IntQueryOperatorInput = {
 };
 
 
+export type MicrocmsBlog = Node & {
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  publishedAt?: Maybe<Scalars['Date']>;
+  title?: Maybe<Scalars['String']>;
+  body?: Maybe<Scalars['String']>;
+  blogId?: Maybe<Scalars['String']>;
+};
+
+
+export type MicrocmsBlogCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MicrocmsBlogUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MicrocmsBlogPublishedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type MicrocmsBlogConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<MicrocmsBlogEdge>;
+  nodes: Array<MicrocmsBlog>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<MicrocmsBlogGroupConnection>;
+};
+
+
+export type MicrocmsBlogConnectionDistinctArgs = {
+  field: MicrocmsBlogFieldsEnum;
+};
+
+
+export type MicrocmsBlogConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: MicrocmsBlogFieldsEnum;
+};
+
+export type MicrocmsBlogEdge = {
+  next?: Maybe<MicrocmsBlog>;
+  node: MicrocmsBlog;
+  previous?: Maybe<MicrocmsBlog>;
+};
+
+export type MicrocmsBlogFieldsEnum = 
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
+  | 'createdAt'
+  | 'updatedAt'
+  | 'publishedAt'
+  | 'title'
+  | 'body'
+  | 'blogId';
+
+export type MicrocmsBlogFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  publishedAt?: Maybe<DateQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  body?: Maybe<StringQueryOperatorInput>;
+  blogId?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MicrocmsBlogGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<MicrocmsBlogEdge>;
+  nodes: Array<MicrocmsBlog>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type MicrocmsBlogSortInput = {
+  fields?: Maybe<Array<Maybe<MicrocmsBlogFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
 /** Node Interface */
 export type Node = {
   id: Scalars['ID'];
@@ -716,6 +903,8 @@ export type Query = {
   allSite: SiteConnection;
   sitePage?: Maybe<SitePage>;
   allSitePage: SitePageConnection;
+  microcmsBlog?: Maybe<MicrocmsBlog>;
+  allMicrocmsBlog: MicrocmsBlogConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
@@ -857,6 +1046,28 @@ export type QuerySitePageArgs = {
 export type QueryAllSitePageArgs = {
   filter?: Maybe<SitePageFilterInput>;
   sort?: Maybe<SitePageSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryMicrocmsBlogArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  publishedAt?: Maybe<DateQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  body?: Maybe<StringQueryOperatorInput>;
+  blogId?: Maybe<StringQueryOperatorInput>;
+};
+
+
+export type QueryAllMicrocmsBlogArgs = {
+  filter?: Maybe<MicrocmsBlogFilterInput>;
+  sort?: Maybe<MicrocmsBlogSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -1340,13 +1551,17 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___crossOrigin'
   | 'pluginCreator___pluginOptions___include_favicon'
   | 'pluginCreator___pluginOptions___cacheDigest'
-  | 'pluginCreator___pluginOptions___path'
-  | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___pluginOptions___host'
   | 'pluginCreator___pluginOptions___sitemap'
   | 'pluginCreator___pluginOptions___policy'
   | 'pluginCreator___pluginOptions___policy___userAgent'
   | 'pluginCreator___pluginOptions___policy___allow'
+  | 'pluginCreator___pluginOptions___apiKey'
+  | 'pluginCreator___pluginOptions___serviceId'
+  | 'pluginCreator___pluginOptions___apis'
+  | 'pluginCreator___pluginOptions___apis___endpoint'
+  | 'pluginCreator___pluginOptions___path'
+  | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
@@ -1639,13 +1854,17 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___crossOrigin'
   | 'pluginOptions___include_favicon'
   | 'pluginOptions___cacheDigest'
-  | 'pluginOptions___path'
-  | 'pluginOptions___pathCheck'
   | 'pluginOptions___host'
   | 'pluginOptions___sitemap'
   | 'pluginOptions___policy'
   | 'pluginOptions___policy___userAgent'
   | 'pluginOptions___policy___allow'
+  | 'pluginOptions___apiKey'
+  | 'pluginOptions___serviceId'
+  | 'pluginOptions___apis'
+  | 'pluginOptions___apis___endpoint'
+  | 'pluginOptions___path'
+  | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
   | 'ssrAPIs'
@@ -1781,11 +2000,26 @@ export type SitePluginPluginOptions = {
   crossOrigin?: Maybe<Scalars['String']>;
   include_favicon?: Maybe<Scalars['Boolean']>;
   cacheDigest?: Maybe<Scalars['String']>;
-  path?: Maybe<Scalars['String']>;
-  pathCheck?: Maybe<Scalars['Boolean']>;
   host?: Maybe<Scalars['String']>;
   sitemap?: Maybe<Scalars['String']>;
   policy?: Maybe<Array<Maybe<SitePluginPluginOptionsPolicy>>>;
+  apiKey?: Maybe<Scalars['String']>;
+  serviceId?: Maybe<Scalars['String']>;
+  apis?: Maybe<Array<Maybe<SitePluginPluginOptionsApis>>>;
+  path?: Maybe<Scalars['String']>;
+  pathCheck?: Maybe<Scalars['Boolean']>;
+};
+
+export type SitePluginPluginOptionsApis = {
+  endpoint?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsApisFilterInput = {
+  endpoint?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsApisFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsApisFilterInput>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
@@ -1809,11 +2043,14 @@ export type SitePluginPluginOptionsFilterInput = {
   crossOrigin?: Maybe<StringQueryOperatorInput>;
   include_favicon?: Maybe<BooleanQueryOperatorInput>;
   cacheDigest?: Maybe<StringQueryOperatorInput>;
-  path?: Maybe<StringQueryOperatorInput>;
-  pathCheck?: Maybe<BooleanQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
   sitemap?: Maybe<StringQueryOperatorInput>;
   policy?: Maybe<SitePluginPluginOptionsPolicyFilterListInput>;
+  apiKey?: Maybe<StringQueryOperatorInput>;
+  serviceId?: Maybe<StringQueryOperatorInput>;
+  apis?: Maybe<SitePluginPluginOptionsApisFilterListInput>;
+  path?: Maybe<StringQueryOperatorInput>;
+  pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsPolicy = {
@@ -1888,24 +2125,3 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>;
   glob?: Maybe<Scalars['String']>;
 };
-
-export type SeoQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type SeoQuery = { site?: Maybe<(
-    Pick<Site, 'buildTime'>
-    & { siteMetadata?: Maybe<(
-      Pick<SiteSiteMetadata, 'author' | 'siteLanguage' | 'logo' | 'pathPrefix' | 'twitter' | 'shortName' | 'titleAlt'>
-      & { defaultTitle: SiteSiteMetadata['title'], siteUrl: SiteSiteMetadata['url'], defaultDescription: SiteSiteMetadata['description'], defaultBanner: SiteSiteMetadata['banner'] }
-    )> }
-  )> };
-
-export type LayoutsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type LayoutsQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-export type PagesAboutQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type PagesAboutQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };

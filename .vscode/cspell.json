@@ -2,16 +2,20 @@
   "version": "0.1",
   "language": "en",
   "words": [
-    "readonly",
-    "esnext",
-    "Volare",
-    "Viah",
-    "gtag",
-    "vercel",
+    "atrule",
     "camelcase",
-    "maxage",
-    "repos",
     "codegen",
-    "JSONLD"
+    "esnext",
+    "gtag",
+    "Hiragino",
+    "Kaku",
+    "JSONLD",
+    "linenumber",
+    "maxage",
+    "microcms",
+    "perfers",
+    "readonly",
+    "repos",
+    "vercel"
   ]
 }
