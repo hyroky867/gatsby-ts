@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "date-fns": "^2.16.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.91",
     "gatsby-plugin-catch-links": "^2.3.15",
@@ -12,22 +13,26 @@
     "gatsby-plugin-react-helmet": "^3.5.0",
     "gatsby-plugin-robots-txt": "^1.5.3",
     "gatsby-plugin-sitemap": "^2.4.17",
-    "gatsby-source-filesystem": "^2.3.37",
-    "gatsby-transformer-remark": "^2.8.47",
+    "gatsby-source-microcms": "^1.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.2.1"
   },
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
+    "clean": "gatsby clean",
     "format": "prettier --parser typescript --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.ts*\"",
     "lint": "eslint --ext .ts,.tsx ./",
     "lint:fix": "eslint --fix --ext .ts,.tsx ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "@types/react-helmet": "^6.1.0",
+    "@types/styled-components": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "@typescript-eslint/parser": "^2.0.0",
     "eslint": "^6.0.0",
