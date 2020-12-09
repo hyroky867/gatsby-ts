@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "ESNEXT",
     "lib": [
       "dom",
       "dom.iterable",
@@ -8,6 +8,7 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "sourceMap": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -19,10 +20,8 @@
     "jsx": "preserve"
   },
   "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "./src/**/*"
+    "node_modules",
+    "public",
+    ".cache"
   ]
 }
