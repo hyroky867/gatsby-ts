@@ -6,6 +6,10 @@
   },
   "eslint.alwaysShowStatus": true,
   "files.exclude": {
+    "node_modules/": true,
     "**/.history": true
+  },
+  "search.exclude": {
+    "yarn.lock": true
   }
 }
