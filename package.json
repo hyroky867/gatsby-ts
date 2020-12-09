@@ -20,8 +20,8 @@
     "styled-components": "^5.2.1"
   },
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
+    "build": "gatsby clean && gatsby build",
+    "dev": "gatsby clean && gatsby develop",
     "clean": "gatsby clean",
     "format": "prettier --parser typescript --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.ts*\"",
     "lint": "eslint --ext .ts,.tsx ./",
