@@ -8,7 +8,7 @@ const url = `https://${process.env.DOMAIN}`;
 
 module.exports = {
   siteMetadata: {
-    ...config
+    ...config,
   },
   plugins: [
     'gatsby-plugin-typescript',
@@ -16,7 +16,7 @@ module.exports = {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {
         fileName: 'types/graphql-types.d.ts',
-      }
+      },
     },
     'gatsby-plugin-sitemap',
     {
@@ -42,19 +42,21 @@ module.exports = {
           {
             userAgent: '*',
             allow: '/',
-          }
-        ]
-      }
+          },
+        ],
+      },
     },
     {
       resolve: 'gatsby-source-microcms',
       options: {
         apiKey: `${process.env.MICROCMS_API_KEY}`,
         serviceId: process.env.MICROCMS_SERVICE_ID,
-        apis: [{
-          endpoint: process.env.MICROCMS_ENDPOINT,
-        }],
+        apis: [
+          {
+            endpoint: process.env.MICROCMS_ENDPOINT,
+          },
+        ],
       },
     },
-  ]
-}
+  ],
+};
