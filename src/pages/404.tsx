@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SEO } from '../components/SEO';
 import { Title } from '../components/Title';
-import SEO from '../components/SEO';
 
 const title = '404 NOT FOUND';
 

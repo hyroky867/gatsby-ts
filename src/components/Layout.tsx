@@ -46,7 +46,6 @@ export const Layout: React.FC<Props> = ({ children }: Props) => {
 
   return (
     <LayoutWrapper>
-      {/* <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}> */}
       <GlobalStyle />
       <LayoutContainer>
         <Header title={process.env.SITE_TITLE ?? ''}>
@@ -67,12 +66,8 @@ export const Layout: React.FC<Props> = ({ children }: Props) => {
             </svg>
           </ModeButton>
         </Header>
-        <Main>
-          {children}
-          {/* <CopyRight /> */}
-        </Main>
+        <Main>{children}</Main>
       </LayoutContainer>
-      {/* </ThemeProvider> */}
     </LayoutWrapper>
   );
 };
