@@ -1,2 +1,4 @@
 config/
 types/graphql-types.d.ts
+gatsby-config.js
+gatsby-node.js
