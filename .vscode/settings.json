@@ -7,5 +7,13 @@
   "eslint.alwaysShowStatus": true,
   "files.exclude": {
     "**/.history": true
-  }
+  },
+  "search.exclude": {
+    "yarn.lock": true,
+    ".cache": true
+  },
+  "cSpell.ignorePaths": [
+    ".cache",
+    "public"
+  ]
 }

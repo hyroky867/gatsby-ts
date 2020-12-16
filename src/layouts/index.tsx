@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import { LayoutsQuery } from '../@types/graphql-types';
+import { LayoutsQuery } from '../../types/graphql-types';
 
 type Props = {
   children: React.ReactNode;
