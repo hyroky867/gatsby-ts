@@ -2174,11 +2174,6 @@ export type SeoQuery = { site?: Maybe<(
     )> }
   )> };
 
-export type LayoutsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type LayoutsQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
 export type ContentsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
