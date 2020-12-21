@@ -4,7 +4,13 @@ import styled from 'styled-components';
 
 const H1 = styled.h1`
   font-size: var(--title-size);
-  color: var(--logo-color);
+  color: black;
+  font-size: 30px;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: gray;
+  }
 `;
 
 const StyledLink = styled(Link)`

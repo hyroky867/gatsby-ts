@@ -15,7 +15,11 @@ type H2Props = { alignCenter: boolean };
 const H2 = styled.h2`
   margin: 0;
   padding: 0 0 8px 0;
-  font-size: var(--section-title-size);
-  color: var(--title-color);
   text-align: ${({ alignCenter }: H2Props): string => (alignCenter ? 'center' : 'left')};
+  font-size: 24px;
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: gray;
+  }
 `;
