@@ -688,6 +688,7 @@ export type MicrocmsBlog = Node & {
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
   publishedAt?: Maybe<Scalars['Date']>;
+  revisedAt?: Maybe<Scalars['Date']>;
   title?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['String']>;
   blogId?: Maybe<Scalars['String']>;
@@ -711,6 +712,14 @@ export type MicrocmsBlogUpdatedAtArgs = {
 
 
 export type MicrocmsBlogPublishedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type MicrocmsBlogRevisedAtArgs = {
   formatString?: Maybe<Scalars['String']>;
   fromNow?: Maybe<Scalars['Boolean']>;
   difference?: Maybe<Scalars['String']>;
@@ -834,6 +843,7 @@ export type MicrocmsBlogFieldsEnum =
   | 'createdAt'
   | 'updatedAt'
   | 'publishedAt'
+  | 'revisedAt'
   | 'title'
   | 'body'
   | 'blogId';
@@ -846,6 +856,7 @@ export type MicrocmsBlogFilterInput = {
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   publishedAt?: Maybe<DateQueryOperatorInput>;
+  revisedAt?: Maybe<DateQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
   body?: Maybe<StringQueryOperatorInput>;
   blogId?: Maybe<StringQueryOperatorInput>;
@@ -1062,6 +1073,7 @@ export type QueryMicrocmsBlogArgs = {
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   publishedAt?: Maybe<DateQueryOperatorInput>;
+  revisedAt?: Maybe<DateQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
   body?: Maybe<StringQueryOperatorInput>;
   blogId?: Maybe<StringQueryOperatorInput>;
