@@ -48,7 +48,7 @@ export const Layout: React.FC<Props> = ({ children }: Props) => {
     <LayoutWrapper>
       <GlobalStyle />
       <LayoutContainer>
-        <Header title={process.env.SITE_TITLE ?? ''}>
+        <Header title="Volare Viah">
           <ModeButton onClick={toggleThemeMode}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
