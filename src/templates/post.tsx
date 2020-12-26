@@ -1,8 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { SectionTitle } from '../components/SectionTitle';
 import { Date } from '../components/Date';
-import Container from '../components/Container';
+import { Article } from '../components/Article';
 import { Content } from '../components/Content';
 import { Layout } from '../components/Layout';
 import { BlogContext } from '../gatsby/createBlogPages';
@@ -16,20 +15,18 @@ const PostTemplate: React.FC<Props> = ({ pageContext }: Props) => {
   return (
     <Layout>
       <SEO title={pageContext.node.title} article={true} />
-      <Container>
-        <Header>
-          <SectionTitle content={pageContext.node.title ?? ''} alignCenter={false} />
+      <Article>
+        <section>
           <Date dateString={pageContext.node.publishedAt} />
-        </Header>
+          <h1>
+            <SectionTitle content={pageContext.node.title ?? ''} alignCenter={false} />
+          </h1>
+        </section>
         <section>
           <Content markdown={pageContext.node.body || ''} />
         </section>
-      </Container>
+      </Article>
     </Layout>
   );
 };
 export default PostTemplate;
-
-const Header = styled.header`
-  padding: 10px 0;
-`;
