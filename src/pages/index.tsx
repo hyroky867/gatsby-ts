@@ -31,12 +31,14 @@ const BlogIndex: React.FC<Props> = ({ data }: Props) => {
           const { node } = edge;
           return (
             <Article key={node.id}>
-              <header>
+              <section>
                 <Date dateString={node.publishedAt} />
-                <StyledLink to={`/blog/${node.id}/`}>
-                  <SectionTitle content={node.title ?? ''} alignCenter={false} />
-                </StyledLink>
-              </header>
+                <h1>
+                  <StyledLink to={`/blog/${node.id}/`}>
+                    <SectionTitle content={node.title ?? ''} alignCenter={false} />
+                  </StyledLink>
+                </h1>
+              </section>
             </Article>
           );
         })}

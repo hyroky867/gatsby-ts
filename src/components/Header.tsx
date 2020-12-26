@@ -2,14 +2,13 @@ import * as React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-const H1 = styled.h1`
+const HeaderTitle = styled.span`
+  color: var(--title-color);
   font-size: var(--title-size);
-  color: black;
-  font-size: 30px;
   &:hover {
     cursor: pointer;
     text-decoration: underline;
-    color: gray;
+    color: var(--sub-text-color);
   }
 `;
 
@@ -43,7 +42,7 @@ const Header: React.FC<Props> = ({ title, children }: Props) => {
   return (
     <HeaderContainer>
       <StyledLink to="/">
-        <H1>{title}</H1>
+        <HeaderTitle>{title}</HeaderTitle>
       </StyledLink>
       <HeaderRightContainer>{children}</HeaderRightContainer>
     </HeaderContainer>
