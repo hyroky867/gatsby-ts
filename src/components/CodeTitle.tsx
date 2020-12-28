@@ -13,8 +13,8 @@ const Span = styled.span`
   display: inline;
   position: relative;
   font-family: var(--font-family);
-  color: #eee;
-  background: #777;
+  color: var(--title-color);
+  background-color: var(--bg-color);
   border-top-left-radius: 0.3em;
   border-top-right-radius: 0.3em;
   padding: 4px;

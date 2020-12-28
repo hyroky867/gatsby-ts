@@ -1,12 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GlobalStyle } from '../themes/GlobalStyle';
+import { mediaSizes } from '../utils/media';
 import Header from './Header';
 
-const LayoutWrapper = styled.div`
+const LayoutWrapper = styled.div<{ fullWidth?: boolean }>`
   width: 100vw;
   display: flex;
   justify-content: center;
+  line-height: 1.7;
+  font-size: var(--normal-size);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: ${({ fullWidth }): string => (fullWidth ? '100%' : '100rem')};
+  padding: ${({ fullWidth }): string => (fullWidth ? '0' : '0 6rem')};
+  @media screen and (max-width: ${mediaSizes.tablet}) {
+    padding: ${({ fullWidth }): string => (fullWidth ? '0' : '0 3rem')};
+  }
+  @media screen and (max-width: ${mediaSizes.phone}) {
+    padding: ${({ fullWidth }): string => (fullWidth ? '0' : '0 1rem')};
+  }
 `;
 
 const LayoutContainer = styled.div`
@@ -48,7 +63,7 @@ export const Layout: React.FC<Props> = ({ children }: Props) => {
     <LayoutWrapper>
       <GlobalStyle />
       <LayoutContainer>
-        <Header title="Volare Viah">
+        <Header title={process.env.SITE_TITLE ?? ''}>
           <ModeButton onClick={toggleThemeMode}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
