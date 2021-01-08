@@ -25,7 +25,7 @@ type Props = {
 const BlogIndex: React.FC<Props> = ({ data }: Props) => {
   return (
     <Layout>
-      <SEO title={process.env.SITE_TITLE ?? ''} article={false} />
+      <SEO title={process.env.GATSBY_SITE_TITLE ?? ''} article={false} />
       <Container>
         {data.allMicrocmsBlog.edges.map((edge) => {
           const { node } = edge;
