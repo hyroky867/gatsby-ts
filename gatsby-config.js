@@ -11,6 +11,13 @@ module.exports = {
     ...config,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: `${process.env.GOOGLE_ANALYTICS_TRACKING_ID}`,
+        head: true,
+      }
+    },
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-graphql-codegen',

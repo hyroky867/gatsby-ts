@@ -2,6 +2,7 @@
   "name": "gatsby-ts",
   "description": "Gatsby TypeScript",
   "version": "1.0.0",
+  "license": "UNLICENSED",
   "private": true,
   "dependencies": {
     "date-fns": "^2.16.1",
@@ -47,6 +48,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^2.5.0",
+    "gatsby-plugin-google-analytics": "^2.9.0",
     "gatsby-plugin-graphql-codegen": "^2.7.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.13",
