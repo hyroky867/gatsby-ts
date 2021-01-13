@@ -15,7 +15,7 @@ export const info: {
     description: string;
   }[];
 } = {
-  title: `${process.env.GATSBY_SITE_TITLE}`,
+  title: `${process.env.SITE_TITLE}`,
   icon: 'avatar.jpg',
   shortProfile: `${process.env.DESCRIPTION}`,
   links: [

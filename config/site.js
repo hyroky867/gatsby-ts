@@ -2,8 +2,8 @@ const url = `https://${process.env.DOMAIN}`
 
 module.exports = {
   pathPrefix: '/',
-  title: process.env.GATSBY_SITE_TITLE, // タイトル
-  titleAlt: process.env.GATSBY_SITE_TITLE, // JSONLDのためのタイトル
+  title: process.env.SITE_TITLE, // タイトル
+  titleAlt: process.env.SITE_TITLE, // JSONLDのためのタイトル
   description: process.env.DESCRIPTION,
   url: url, // スラッシュなしのサイトURL
   siteUrl: `${url}/`, // スラッシュありのサイトURL
