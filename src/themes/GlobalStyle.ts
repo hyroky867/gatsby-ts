@@ -49,9 +49,34 @@ body.dark {
   --text-color: #BDBDBD;
   --sub-text-color: #9E9E9E;
 }
-/* syntax highlight */
-body {
 
+table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  margin-top: 0;
+  margin-bottom: 16px;
+  border-collapse: collapse;
+  border-spacing: 0px;
+}
+
+table th {
+  font-weight: 600;
+}
+
+table td,
+table th {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f6f8fa;
 }
 `;
 
