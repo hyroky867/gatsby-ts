@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { CodeBlock } from './CodeBlock';
 import { LinkBlock } from './LineBlock';
 
@@ -10,6 +11,7 @@ type Props = {
 export const Content: React.FC<Props> = ({ markdown }: Props) => {
   return (
     <ReactMarkdown
+      plugins={[remarkGfm]}
       source={markdown}
       escapeHtml={false}
       renderers={{
