@@ -9,3 +9,4 @@ yarn-error.log
 .history
 .env
 .env.development
+.husky
