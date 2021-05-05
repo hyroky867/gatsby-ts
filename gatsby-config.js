@@ -16,13 +16,13 @@ module.exports = {
       options: {
         trackingId: `${process.env.GOOGLE_ANALYTICS_TRACKING_ID}`,
         head: true,
-      }
+      },
     },
     'gatsby-plugin-typescript',
     {
-      resolve: 'gatsby-plugin-graphql-codegen',
-      options: {
-        fileName: 'types/graphql-types.d.ts',
+      resolve: 'gatsby-plugin-typegen',
+      emitSchema: {
+        'src/__generated__/gatsby-introspection.json': true,
       },
     },
     'gatsby-plugin-sitemap',

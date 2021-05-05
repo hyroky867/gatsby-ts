@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Container from '../components/Container';
 import { SectionTitle } from '../components/SectionTitle';
 import { Date } from '../components/Date';
-import { ContentsQuery } from '../../types/graphql-types';
 import { Layout } from '../components/Layout';
 import { SEO } from '../components/SEO';
 
@@ -19,7 +18,7 @@ const StyledLink = styled(Link)`
 `;
 
 type Props = {
-  data: ContentsQuery;
+  data: GatsbyTypes.ContentsQuery;
 };
 
 const BlogIndex: React.FC<Props> = ({ data }: Props) => {
@@ -32,7 +31,7 @@ const BlogIndex: React.FC<Props> = ({ data }: Props) => {
           return (
             <Article key={node.id}>
               <header>
-                <Date dateString={node.publishedAt} />
+                <Date dateString={node.publishedAt ?? ''} />
                 <StyledLink to={`/blog/${node.id}/`}>
                   <SectionTitle content={node.title ?? ''} alignCenter={false} />
                 </StyledLink>

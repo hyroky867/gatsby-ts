@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
-import { SeoQuery } from '../../types/graphql-types';
 
 type Props = {
   title?: string | null;
@@ -46,7 +45,7 @@ type JsonLDType = {
 };
 
 export const SEO: React.FC<Props> = ({ title, desc, banner, pathname, article }: Props) => {
-  const data: SeoQuery = useStaticQuery(graphql`
+  const data: GatsbyTypes.SEOQuery = useStaticQuery<GatsbyTypes.SEOQuery>(graphql`
     query SEO {
       site {
         buildTime(formatString: "YYYY年MM月DD日")
