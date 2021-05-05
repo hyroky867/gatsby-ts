@@ -1,13 +1,12 @@
 import path from 'path';
 import { Actions, CreatePagesArgs } from 'gatsby';
-import { MicrocmsBlogConnection, SitePageContextNode } from '../../types/graphql-types';
 
 type Result = {
-  allMicrocmsBlog: MicrocmsBlogConnection;
+  allMicrocmsBlog: GatsbyTypes.MicrocmsBlogConnection;
 };
 
 export type BlogContext = {
-  node: SitePageContextNode;
+  node: GatsbyTypes.SitePageContextNode;
 };
 
 const query = `

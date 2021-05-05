@@ -19,7 +19,7 @@ const PostTemplate: React.FC<Props> = ({ pageContext }: Props) => {
       <Container>
         <Header>
           <SectionTitle content={pageContext.node.title ?? ''} alignCenter={false} />
-          <Date dateString={pageContext.node.publishedAt} />
+          <Date dateString={pageContext.node.publishedAt ?? ''} />
         </Header>
         <section>
           <Content markdown={pageContext.node.body || ''} />
