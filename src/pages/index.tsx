@@ -26,12 +26,12 @@ const BlogIndex: React.FC<Props> = ({ data }: Props) => {
     <Layout>
       <SEO title={process.env.GATSBY_SITE_TITLE ?? ''} article={false} />
       <Container>
-        {data.allMicrocmsBlog.edges.map((edge) => {
+        {data.allContentfulBlogPost.edges.map((edge) => {
           const { node } = edge;
           return (
             <Article key={node.id}>
               <header>
-                <Date dateString={node.publishedAt ?? ''} />
+                <Date dateString={node.publishDate ?? ''} />
                 <StyledLink to={`/blog/${node.id}/`}>
                   <SectionTitle content={node.title ?? ''} alignCenter={false} />
                 </StyledLink>
@@ -46,13 +46,15 @@ const BlogIndex: React.FC<Props> = ({ data }: Props) => {
 
 export const contentsQuery = graphql`
   query Contents {
-    allMicrocmsBlog(sort: { fields: createdAt, order: DESC }) {
+    allContentfulBlogPost(sort: { fields: publishDate, order: DESC }) {
       edges {
         node {
-          id
           title
-          body
-          publishedAt
+          id
+          body {
+            body
+          }
+          publishDate
         }
       }
     }

@@ -1,28 +1,30 @@
 import path from 'path';
 import { Actions, CreatePagesArgs } from 'gatsby';
 
-type Result = {
-  allMicrocmsBlog: GatsbyTypes.MicrocmsBlogConnection;
-};
-
-export type BlogContext = {
-  node: GatsbyTypes.SitePageContextNode;
-};
-
 const query = `
-  {
-    allMicrocmsBlog {
-      edges {
-        node {
-          id
-          title
+{
+  allContentfulBlogPost {
+    edges {
+      node {
+        title
+        publishDate
+        id
+        body {
           body
-          publishedAt
         }
       }
     }
   }
+}
 `;
+
+type Result = {
+  allContentfulBlogPost: GatsbyTypes.ContentfulBlogPostConnection;
+};
+
+export type PostContext = {
+  node: GatsbyTypes.ContentfulBlogPost;
+};
 
 export const createBlogPages = async ({
   graphql,
@@ -36,15 +38,15 @@ export const createBlogPages = async ({
     throw result.errors;
   }
 
-  const { edges } = result.data.allMicrocmsBlog;
+  const { edges } = result.data.allContentfulBlogPost;
   if (!edges) {
     throw new Error('undefined edges');
   }
 
-  edges.map((edge: BlogContext) => {
+  edges.map((edge: GatsbyTypes.ContentfulBlogPostEdge) => {
     const { node } = edge;
     if (node) {
-      createPage<BlogContext>({
+      createPage<PostContext>({
         path: `/blog/${node.id}`,
         component: path.resolve('./src/templates/post.tsx'),
         context: { node },

@@ -5,11 +5,11 @@ import { Date } from '../components/Date';
 import Container from '../components/Container';
 import { Content } from '../components/Content';
 import { Layout } from '../components/Layout';
-import { BlogContext } from '../gatsby/createBlogPages';
+import { PostContext } from '../gatsby/createBlogPages';
 import { SEO } from '../components/SEO';
 
 type Props = {
-  pageContext: BlogContext;
+  pageContext: PostContext;
 };
 
 const PostTemplate: React.FC<Props> = ({ pageContext }: Props) => {
@@ -19,10 +19,10 @@ const PostTemplate: React.FC<Props> = ({ pageContext }: Props) => {
       <Container>
         <Header>
           <SectionTitle content={pageContext.node.title ?? ''} alignCenter={false} />
-          <Date dateString={pageContext.node.publishedAt ?? ''} />
+          <Date dateString={pageContext.node.publishDate ?? ''} />
         </Header>
         <section>
-          <Content markdown={pageContext.node.body || ''} />
+          <Content markdown={pageContext.node.body?.body || ''} />
         </section>
       </Container>
     </Layout>
