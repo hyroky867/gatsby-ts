@@ -10,7 +10,7 @@ export const CodeBlock: React.FC<SyntaxHighlighterProps> = ({
   const [lang, title] = language ? language.split(':') : ['', undefined];
   return (
     <>
-      <CodeTitle title={title} />
+      {title === undefined ? undefined : <CodeTitle title={title} />}
       <SyntaxHighlighter language={lang} style={style} showLineNumbers={true}>
         {value}
       </SyntaxHighlighter>

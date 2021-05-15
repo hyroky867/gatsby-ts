@@ -33,7 +33,8 @@
     "lint": "eslint --ext .ts,.tsx ./",
     "lint:fix": "eslint --fix --ext .ts,.tsx ./ && && prettier --write .ts,.tsx",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
     "@types/node": "^15.0.2",
