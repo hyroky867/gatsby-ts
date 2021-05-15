@@ -51,9 +51,6 @@ export const contentsQuery = graphql`
         node {
           title
           id
-          body {
-            body
-          }
           publishDate
         }
       }

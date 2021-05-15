@@ -10,7 +10,9 @@ const query = `
         publishDate
         id
         body {
-          body
+          childMdx {
+            body
+          }
         }
       }
     }
